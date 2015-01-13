@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Vijay_Scrollpopup>
+			<version>1.0.0</version>
+		</Vijay_Scrollpopup>
+	</modules>
+	
+	<frontend>
+		 <layout>
+			<updates>
+				<vijayscrollpopup>
+					<file>vijaystore/scrollpopup.xml</file>
+				</vijayscrollpopup>
+			</updates>
+		 </layout>
+	</frontend>
+		
+	<global>
+		<blocks>
+			<vijayscrollpopup>
+				<class>Vijay_Scrollpopup_Block</class>
+			</vijayscrollpopup>
+		</blocks>
+		
+		<helpers>			
+			<vijayscrollpopup>
+				<class>Vijay_Scrollpopup_Helper</class>
+			</vijayscrollpopup>
+		</helpers>
+		
+		<models>			
+			<vijayscrollpopup>
+				<class>Vijay_Scrollpopup_Model</class>
+			</vijayscrollpopup>
+		</models>
+	</global>
+	
+	<adminhtml>
+		<layout>
+			<updates>
+				<vijayscrollpopup module="vijayscrollpopup">
+					<file>vijaystore/scrollpopup.xml</file>
+				</vijayscrollpopup>
+			</updates>
+		</layout>
+		
+		<acl>
+			<resources>
+				<all>
+					<title>Allow Everything</title>
+				</all>
+				<admin>
+				    <children>
+						<system>
+							<children>
+								<config>
+									<children>
+										<scrollpopup_tab>
+											<title>Scroll Popup Setting</title>
+										</scrollpopup_tab>				
+									</children>
+								</config>
+							</children>
+						</system>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+	</adminhtml>
+	
+	<default>
+		<scrollpopup_tab>
+			<scrollpopup_setting>
+				<scrollpopup_active>1</scrollpopup_active>
+				<scrollpopup_side>left</scrollpopup_side>
+				<scrollpopup_content>hello world...!</scrollpopup_content>
+			</scrollpopup_setting>
+		</scrollpopup_tab>
+	</default>		
+</config>

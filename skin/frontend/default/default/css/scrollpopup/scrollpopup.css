@@ -1,0 +1,31 @@
+.side_space{height: 8px;width: 100%;}
+#scrollpopupContent {padding: 8px; background-color:#eee;}
+#closeImage {padding: 10px;}
+.sideClose {
+background: url("../../images/scrollpopup/sideclose.png") no-repeat;
+cursor: pointer;
+height: 25px;
+position: absolute;
+right: 7px;
+text-decoration: none;
+top: 15px;
+width: 36px;
+z-index: 99;
+}
+.sideposition {right: 5px;}
+
+#scrollpopupSideBar {
+-moz-transition: all 0.8s ease-in-out;
+-webkit-transition: all 0.8s ease-in-out;
+-o-transition: all 0.8s ease-in-out;
+-ms-transition: all 0.8s ease-in-out;
+transition: all 0.8s ease-in-out;
+position: fixed;
+bottom: 70px;
+width: 370px;
+right: 0px;
+display: block;
+z-index: 9999;
+overflow: hidden;
+padding: 1px;
+}

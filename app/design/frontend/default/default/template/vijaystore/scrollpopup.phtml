@@ -1,0 +1,54 @@
+<?php
+$enable = Mage::helper('vijayscrollpopup')->scrollpopup_enable();
+$content = Mage::helper('vijayscrollpopup')->scrollpopup_content();
+$side = Mage::helper('vijayscrollpopup')->scrollpopup_side();
+
+if($enable):
+?>
+<div id="scrollpopupSideBar" style="<?php echo $side;?>:-800px;">
+	<div class="side_space"></div>
+	<div id="scrollpopupContent">
+		<div id="closeImage">
+			<a id="sideCloseButton" class="sideClose" href="javascript:" onclick="return scrollpopup_close();"></a>
+		</div>
+		
+		<div class="side_space"></div>
+		
+		<div style="overflow: hidden;">
+			<?php echo $content; ?>
+		</div>
+		
+	</div>
+	<div class="side_space"></div>			
+</div>
+		
+	<script type="text/javascript">
+		var sideNotification = 1;
+		jQuery(document).ready(function () {
+			jQuery(window).scroll(function () {
+					if (jQuery(window).scrollTop() >= (jQuery("body").height()/3))
+					{
+						if (!jQuery("#scrollpopupSideBar").hasClass('sideposition') && sideNotification == 1){
+							jQuery("#scrollpopupSideBar").animate({'<?php echo $side;?>':'5px' },200);
+							jQuery("#scrollpopupSideBar").addClass('sideposition');
+							sideNotification = 0;
+						}
+					}	
+
+					else {			
+						if (jQuery("#scrollpopupSideBar").hasClass('sideposition') && sideNotification == 0){
+							jQuery("#scrollpopupSideBar").animate({'<?php echo $side;?>':'-800px' },200);
+							jQuery("#scrollpopupSideBar").removeClass('sideposition');
+							sideNotification = 1;
+						}
+					}
+			});
+		});
+
+		function scrollpopup_close()
+		{
+		
+			jQuery("#scrollpopupSideBar").animate({'<?php echo $side;?>' : '-800px' },200);
+		}	
+	</script>
+<?php endif; ?>

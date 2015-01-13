@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+		<reference name="head">
+			<action method="addItem"><type>skin_js</type><name>js/scrollpopup/jquery.v1.11.1.js</name><params/></action>
+			<action method="addItem"><type>skin_js</type><name>js/scrollpopup/jquery.noconflict.js</name><params/></action>
+			<action method="addItem"><type>skin_css</type><name>css/scrollpopup/scrollpopup.css</name><params/></action>
+
+        </reference>
+        <reference name="after_body_start">
+			<block type="core/template" name="scroll.popup" template="vijaystore/scrollpopup.phtml" />
+        </reference>
+    </default>
+</layout>
